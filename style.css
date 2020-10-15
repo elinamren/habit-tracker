@@ -3,3 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+h1 {
+  font-size: 5rem;
+  color: lightgreen;
+  font-family: "Courier New", Courier, monospace;
+}

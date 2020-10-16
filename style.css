@@ -9,3 +9,7 @@ h1 {
   color: lightgreen;
   font-family: "Courier New", Courier, monospace;
 }
+
+.grid {
+	width:800px;
+}

@@ -14,12 +14,15 @@ function addHabit(event) {
   // create new div
   const habitDiv = document.createElement("div");
   // add classlist
+  habitDiv.classList.add('habit');
 
   // create new li
   const newHabit = document.createElement("li");
   // show your input on new habit row
   newHabit.innerText = habitInput.value;
   // add classlist
+  newHabit.classList.add('habit-item')
+
   // append new habit inside habit div
   habitDiv.appendChild(newHabit);
 
@@ -28,7 +31,7 @@ function addHabit(event) {
   //add delete icon to button
   deleteButton.innerHTML = '<i class="fas fa-times"></i>';
   //add a class to delete button
-  deleteButton.classList.add(".delete-button");
+  deleteButton.classList.add("delete-button");
   //append new delete button inside habit div
   habitDiv.appendChild(deleteButton);
 
@@ -40,8 +43,8 @@ function addHabit(event) {
 }
 
 //delete button
-function deleteHabit(event) {
-  const item = event.target;
+function deleteHabit(e) {
+  const item = e.target;
   if (item.classList[0] === "delete-button") {
     const habit = item.parentElement;
     habit.remove();

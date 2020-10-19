@@ -3,6 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+body{
+	background: yellow;
+}
 
 h1 {
   font-size: 5rem;
@@ -12,4 +15,13 @@ h1 {
 
 .grid {
 	width:800px;
+}
+
+.habit{
+	padding:1rem;
+}
+
+
+.fa-plus, .fa-times {
+	pointer-events: none;
 }

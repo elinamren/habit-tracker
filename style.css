@@ -3,25 +3,55 @@
   margin: 0;
   box-sizing: border-box;
 }
-body{
-	background: yellow;
+body {
+  background: yellow;
 }
 
 h1 {
   font-size: 5rem;
   color: lightgreen;
   font-family: "Courier New", Courier, monospace;
+  padding: 2rem 0rem;
 }
 
-.grid {
-	width:800px;
+h2 {
+  font-size: 2rem;
 }
 
-.habit{
-	padding:1rem;
+header {
+  width: 100%;
+  text-align: center;
 }
 
+.habit {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
 
-.fa-plus, .fa-times {
-	pointer-events: none;
+button {
+  border: none;
+  background-color: white;
+}
+
+.habit-button {
+  padding: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+.habit-input {
+  padding: 1rem;
+  margin: 1rem;
+  border: none;
+  outline: none;
+}
+
+.fa-plus,
+.fa-times {
+  pointer-events: none;
 }

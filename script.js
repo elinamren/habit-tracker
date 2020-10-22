@@ -1,12 +1,15 @@
 // selectors
+const container = document.querySelector(".container");
+const dateList = document.querySelector('.date-list');
+const habitList = document.querySelector(".habit-list");
 const habitInput = document.querySelector(".habit-input");
 const habitButton = document.querySelector(".habit-button");
-const habitList = document.querySelector(".habit-list");
-const dateGrid = document.querySelector(".date-grid");
-const calendarGrid = document.querySelector(".calendar-grid");
+
+// const dateList = document.querySelector(".date-list");
+const listContainer = document.querySelector(".list-container");
 var now = new Date();
-const trackerList = document.querySelector(".tracker-list");
 const colors = ['red', 'green', 'yellow', 'blue'];
+
 
 // Event listener
 habitButton.addEventListener("click", addHabit);
@@ -19,47 +22,48 @@ function daysInThisMonth() {
 
 var days = daysInThisMonth();
 
-function drawGrid() {
+function drawHeader() {
+	const emptyBox = document.createElement("div");
+  	emptyBox.classList.add('emptybox');
+  	emptyBox.innerHTML = '';
+  	dateList.appendChild(emptyBox);	
+
 	for (let i = 0; i < days; i++) {
   	const date = document.createElement("div");
   	date.classList.add('date');
   	date.innerHTML = i + 1;
-  	dateGrid.appendChild(date);
+  	dateList.appendChild(date);
   	}
-  	
-  	const emptyBox = document.createElement("div");
-  	emptyBox.classList.add('emptybox');
-  	emptyBox.innerHTML = '';
-  	habitList.appendChild(emptyBox);
 
-  	const emptyBox2 = document.createElement("div");
-  	emptyBox2.classList.add('emptybox');
-  	emptyBox2.innerHTML = '';
-  	trackerList.appendChild(emptyBox2);
 }
 
-drawGrid();
+drawHeader();
 
 function addHabit(event) {
   event.preventDefault();
 
-  // create new div
+  // create new divs
   const habitDiv = document.createElement("div");
   const calendarDiv = document.createElement("div");
   
   // add classlist
   habitDiv.classList.add('habit');
+  calendarDiv.classList.add('calendar');
   
   // add color span
   const colorPicker = document.createElement("span");
 
-  for (let i = 0; i < colors.legnth; i++){
-  	colorPicker.style.background = colors[i];
-  }
+  // for (let h = 0; h < colors.legnth; h++){
+
+  // 	// colorPicker.style.background = colors[h];
+  // 	console.log(colors[h]);
+  // }
 
   colorPicker.style.borderRadius = '50%';
   colorPicker.style.width = '1rem';
   colorPicker.style.height = '1rem';
+  colorPicker.style.background = 'red';
+
 
   // create new li
   const newHabit = document.createElement("li");
@@ -81,22 +85,19 @@ function addHabit(event) {
   // }
    
 
-
-  // append new habit inside habit div
-  habitDiv.appendChild(colorPicker);
-  habitDiv.appendChild(newHabit);
-
-
-
   for (let i = 0; i < days; i++) {
   	const box = document.createElement("div");
   	box.classList.add('box');
   	box.innerHTML = '';
-  	calendarGrid.appendChild(box);
-
+  	calendarDiv.appendChild(box);
   }
 
-  gridTemplateColumns();
+  // append new habit inside habit div
+  habitDiv.appendChild(colorPicker);
+  habitDiv.appendChild(newHabit);
+  habitList.appendChild(habitDiv);
+  habitList.appendChild(calendarDiv);
+
 
   // create delete button
   const deleteButton = document.createElement("button");
@@ -107,17 +108,9 @@ function addHabit(event) {
   //append new delete button inside habit div
   habitDiv.appendChild(deleteButton);
 
-  // append habit divs into habit list
-  habitList.appendChild(habitDiv);
-  trackerList.appendChild(tracker);
 
   // clear input field
   habitInput.value = "";
-}
-
-// update the grid template column repeat to be the same number as days
-function gridTemplateColumns() {
-  document.querySelector('.calendar-grid').style.gridTemplateColumns = 'repeat(days, 2rem)';
 }
 
 //delete button

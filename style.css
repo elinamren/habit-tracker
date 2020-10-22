@@ -25,25 +25,31 @@ h2 {
 }
 
 .container{
-	margin: 0 5rem;
-}
-.grid{
-	display: grid;
-	grid-template-columns: 1fr 3fr 1fr;
-	grid-template-rows: 1fr 3fr 1fr;
-
-}
-.list-container, .calendar-container, .tracker-container{
-	/*margin: 0.5rem;*/
+	align-content: center;
+	margin: 0.5rem;
 }
 
+.habit{
+	width:12rem;
+	display: inline-block;
+}
+.calendar{
+	display: inline-block;
+}
+
+.calendar, .date-list{
+	display: flex;
+}
 .list-container{
-	background: green;
-	grid-column-start: 1;
-  	grid-column-end: 2;
-	/*display:inline-block;*/
-
+	display: flex;
 }
+
+.date{
+	height:2.5rem;
+	width:1.8rem;
+	padding:0.4rem;
+}
+
 
 .habit, .tracker{
 	height:2.5rem;
@@ -79,35 +85,12 @@ li {
   outline: none;
 }
 
-.emptybox{
-	height:2.5rem;
-	width:1.8rem;
-	padding:0.4rem;
-}
 
 .fa-plus,
 .fa-times {
   pointer-events: none;
 }
 
-.calendar-container{
-	background: red;
-}
-.date-grid{
-	display: flex;
-}
-
-.calendar-grid {
-	display: grid;
-	grid-template-columns: repeat(31, 1.8rem);
-
-}
-
-.date{
-	height:2.5rem;
-	width:1.8rem;
-	padding:0.4rem;
-}
 
 .box {
 	height:2.5rem;
@@ -117,9 +100,8 @@ li {
   	border-width: 0.5px;
   	padding:0.4rem;
 }
-
-.tracker-container{
-	background: orange;
-
+.emptybox{
+	height:2.5rem;
+	width:12rem;
+	padding:0.4rem;
 }
-

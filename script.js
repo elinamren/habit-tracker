@@ -1,19 +1,19 @@
 // selectors
 const container = document.querySelector(".container");
-const dateList = document.querySelector('.date-list');
-const habitList = document.querySelector(".habit-list");
+const dateContainer = document.querySelector('.date-container');
+const habitContainer = document.querySelector(".habit-container");
 const habitInput = document.querySelector(".habit-input");
 const habitButton = document.querySelector(".habit-button");
 
 // const dateList = document.querySelector(".date-list");
-const listContainer = document.querySelector(".list-container");
+// const listContainer = document.querySelector(".list-container");
 var now = new Date();
 const colors = ['red', 'green', 'yellow', 'blue'];
 
 
 // Event listener
 habitButton.addEventListener("click", addHabit);
-habitList.addEventListener("click", deleteHabit);
+habitContainer.addEventListener("click", deleteHabit);
 
 // functions
 function daysInThisMonth() {
@@ -26,13 +26,13 @@ function drawHeader() {
 	const emptyBox = document.createElement("div");
   	emptyBox.classList.add('emptybox');
   	emptyBox.innerHTML = '';
-  	dateList.appendChild(emptyBox);	
+  	dateContainer.appendChild(emptyBox);	
 
 	for (let i = 0; i < days; i++) {
   	const date = document.createElement("div");
   	date.classList.add('date');
   	date.innerHTML = i + 1;
-  	dateList.appendChild(date);
+  	dateContainer.appendChild(date);
   	}
 
 }
@@ -43,10 +43,12 @@ function addHabit(event) {
   event.preventDefault();
 
   // create new divs
+  const row = document.createElement("div");
   const habitDiv = document.createElement("div");
   const calendarDiv = document.createElement("div");
   
   // add classlist
+  row.classList.add('row');
   habitDiv.classList.add('habit');
   calendarDiv.classList.add('calendar');
   
@@ -78,13 +80,6 @@ function addHabit(event) {
   tracker.classList.add('tracker');
   colorPicker.classList.add('color');
 
-  // for (let i = 0; i < 100; i++){
-  // 	newHabit.setAttribute("id", i);
-  // 	calendarGrid.setAttribute("id", i);
-  // 	tracker.setAttribute("id", i);
-  // }
-   
-
   for (let i = 0; i < days; i++) {
   	const box = document.createElement("div");
   	box.classList.add('box');
@@ -95,8 +90,10 @@ function addHabit(event) {
   // append new habit inside habit div
   habitDiv.appendChild(colorPicker);
   habitDiv.appendChild(newHabit);
-  habitList.appendChild(habitDiv);
-  habitList.appendChild(calendarDiv);
+  row.appendChild(habitDiv);
+  row.appendChild(calendarDiv);
+  row.appendChild(tracker);
+  habitContainer.appendChild(row);
 
 
   // create delete button
@@ -117,7 +114,7 @@ function addHabit(event) {
 function deleteHabit(e) {
   const item = e.target;
   if (item.classList[0] === "delete-button") {
-    const habit = item.parentElement;
+    const habit = item.parentElement.parentElement;
     habit.remove();
 
     // const row = ;

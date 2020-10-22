@@ -29,18 +29,14 @@ h2 {
 	margin: 0.5rem;
 }
 
-.habit{
+.habit, .tracker{
 	width:12rem;
-	display: inline-block;
-}
-.calendar{
-	display: inline-block;
 }
 
-.calendar, .date-list{
+.calendar, .date-container{
 	display: flex;
 }
-.list-container{
+.row{
 	display: flex;
 }
 
@@ -49,7 +45,6 @@ h2 {
 	width:1.8rem;
 	padding:0.4rem;
 }
-
 
 .habit, .tracker{
 	height:2.5rem;

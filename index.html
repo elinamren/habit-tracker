@@ -28,7 +28,15 @@
   </div>
 
   <form>
-    <input type="text" class="habit-input" />
+    <input type="text" class="habit-input" list="habits"/>
+    <datalist id="habits">
+      <option value="Catch Pokémons"></option>
+      <option value="Dancing in the rain"></option>
+      <option value="Drink beer with FED22"></option>
+      <option value="Fix bugs"></option>
+      <option value="Eat chocolate"></option>
+      <option value="Time to reflect"></option>  
+    </datalist>
     <button type="submit" class="habit-button">
       <i class="fas fa-plus"></i>
     </button>

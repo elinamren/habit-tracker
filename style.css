@@ -64,6 +64,13 @@ li {
 
  /* ------  E L I N  ------- */
 
+ .delete-button {
+   
+   background-color: transparent;
+ }
+
+ 
+
 .container {
   padding: 1rem;
   background-color: rgb(62, 100, 51);
@@ -88,6 +95,7 @@ li {
   width: 40px;
   padding: 0.5rem;
   border: 1px solid rgb(97, 0, 0);
+  background-color: tomato;
 }
 
 .habit-box {
@@ -101,4 +109,5 @@ li {
   justify-content: space-between;
   width: 200px;
   background-color: cadetblue;
+  padding: 1rem;
 }

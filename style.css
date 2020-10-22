@@ -4,18 +4,23 @@
   box-sizing: border-box;
 }
 body {
-  background: yellow;
+  background: rgb(31, 31, 31);
+  font-family: "Courier New", Courier, monospace;
+
 }
 
 h1 {
   font-size: 5rem;
-  color: lightgreen;
+  color: rgb(167, 114, 159);
   font-family: "Courier New", Courier, monospace;
   padding: 2rem 0rem;
 }
 
 h2 {
   font-size: 2rem;
+  color: rgb(131, 103, 156);
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
 header {
@@ -25,10 +30,11 @@ header {
 
 .habit {
   padding: 1rem;
-  margin: 1rem;
+  /* margin: 1rem; */
+  border: 1px solid pink;
   background-color: white;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 button {
@@ -54,4 +60,45 @@ li {
 .fa-plus,
 .fa-times {
   pointer-events: none;
+}
+
+ /* ------  E L I N  ------- */
+
+.container {
+  padding: 1rem;
+  background-color: rgb(62, 100, 51);
+}
+.header-container {
+  padding: 1rem;
+  background-color: rgb(51, 52, 100);
+  display: flex;
+}
+.list-container {
+  padding: 1rem;
+  background-color: rgb(100, 51, 51);
+}
+
+.header-div {
+  width: 200px;
+  padding: 1rem;
+  background-color: blueviolet;
+}
+
+.header-box {
+  width: 40px;
+  padding: 0.5rem;
+  border: 1px solid rgb(97, 0, 0);
+}
+
+.habit-box {
+  width: 40px;
+  padding: 0.5rem;
+  border: 1px solid rgb(99, 99, 99);
+}
+
+.habit-title {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  background-color: cadetblue;
 }

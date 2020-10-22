@@ -4,11 +4,7 @@ const dateContainer = document.querySelector('.date-container');
 const habitContainer = document.querySelector(".habit-container");
 const habitInput = document.querySelector(".habit-input");
 const habitButton = document.querySelector(".habit-button");
-
-// const dateList = document.querySelector(".date-list");
-// const listContainer = document.querySelector(".list-container");
 var now = new Date();
-const colors = ['red', 'green', 'yellow', 'blue'];
 
 
 // Event listener
@@ -24,23 +20,23 @@ var days = daysInThisMonth();
 
 function drawHeader() {
 	const emptyBox = document.createElement("div");
-  	emptyBox.classList.add('emptybox');
-  	emptyBox.innerHTML = '';
-  	dateContainer.appendChild(emptyBox);	
+	emptyBox.classList.add('emptybox');
+	emptyBox.innerHTML = '';
+	dateContainer.appendChild(emptyBox);	
 
 	for (let i = 0; i < days; i++) {
-  	const date = document.createElement("div");
-  	date.classList.add('date');
-  	date.innerHTML = i + 1;
-  	dateContainer.appendChild(date);
-  	}
+		const date = document.createElement("div");
+		date.classList.add('date');
+		date.innerHTML = i + 1;
+		dateContainer.appendChild(date);
+	}
 
 }
 
 drawHeader();
 
 function addHabit(event) {
-  event.preventDefault();
+	event.preventDefault();
 
   // create new divs
   const row = document.createElement("div");
@@ -52,21 +48,6 @@ function addHabit(event) {
   habitDiv.classList.add('habit');
   calendarDiv.classList.add('calendar');
   
-  // add color span
-  const colorPicker = document.createElement("span");
-
-  // for (let h = 0; h < colors.legnth; h++){
-
-  // 	// colorPicker.style.background = colors[h];
-  // 	console.log(colors[h]);
-  // }
-
-  colorPicker.style.borderRadius = '50%';
-  colorPicker.style.width = '1rem';
-  colorPicker.style.height = '1rem';
-  colorPicker.style.background = 'red';
-
-
   // create new li
   const newHabit = document.createElement("li");
   const tracker = document.createElement("li");
@@ -75,17 +56,35 @@ function addHabit(event) {
   newHabit.innerText = habitInput.value;
   tracker.innerText = 'test';
 
-  // add classlist
-  newHabit.classList.add('habit-item');
-  tracker.classList.add('tracker');
-  colorPicker.classList.add('color');
+  // add color span
+  let colorPicker = document.createElement("span");
 
-  for (let i = 0; i < days; i++) {
-  	const box = document.createElement("div");
-  	box.classList.add('box');
-  	box.innerHTML = '';
-  	calendarDiv.appendChild(box);
-  }
+  // add color array
+  const colors = ['#E89CFB', '#9ED35B', '#FFE178', '#FFBB36', '#FFA7F1'];
+
+  // loop through color array
+  for (let h = 0; h < colors.length; h++) {
+  	const nextColor = h + 1;
+  	colorPicker.style.background = colors[nextColor];
+  // let randomColor = colors[Math.floor(Math.random()*colors.length)];
+}
+
+  	// colorPicker.style.background = randomColor;
+  	colorPicker.style.borderRadius = '50%';
+  	colorPicker.style.width = '1rem';
+  	colorPicker.style.height = '1rem';
+
+
+ 	// add classlist
+ 	newHabit.classList.add('habit-item');
+ 	tracker.classList.add('tracker');
+
+ 	for (let i = 0; i < days; i++) {
+ 		const box = document.createElement("div");
+ 		box.classList.add('box');
+ 		box.innerHTML = '';
+ 		calendarDiv.appendChild(box);
+ 	}
 
   // append new habit inside habit div
   habitDiv.appendChild(colorPicker);
@@ -112,13 +111,12 @@ function addHabit(event) {
 
 //delete button
 function deleteHabit(e) {
-  const item = e.target;
-  if (item.classList[0] === "delete-button") {
-    const habit = item.parentElement.parentElement;
-    habit.remove();
+	const item = e.target;
+	if (item.classList[0] === "delete-button") {
+		const habit = item.parentElement.parentElement;
+		habit.remove();
 
-    // const row = ;
-    // row.remove();
-  }
+	}
 }
+
 

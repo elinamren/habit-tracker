@@ -16,22 +16,31 @@
   <header>
     <h1>Habit tracker</h1>
   </header>
-  <h2>October</h2>
-  <div class="container">
-    <div class="grid">
+  <main class="container">
+  
+    <h2>October</h2>
+  
+    <div class="date-container"> </div>
 
-      <div class="list-container">
+      <div class="habit-container">
         <ul class="habit-list">
         </ul>
       </div>
       <form>
-        <input type="text" class="habit-input" />
+        <input type="text" class="habit-input" list="habit-suggestions"  placeholder="Enter Habit"/>
+        <datalist id="habit-suggestions">
+          <option value="Catch Pokemons"></option>
+          <option value="Beer with FED22"></option>
+          <option value="Reflection Time"></option>
+          <option value="Call your MAMA"></option>
+          <option value="Debugging"></option>
+        </datalist>
         <button type="submit" class="habit-button">
           <i class="fas fa-plus"></i>
         </button>
       </form>
-    </div>
-  </div>
+    
+  </main>
 
   <script src="script.js"></script>
 </body>

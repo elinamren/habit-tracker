@@ -4,12 +4,12 @@
   box-sizing: border-box;
 }
 body {
-  background: yellow;
+  background: #52575D;
 }
 
 h1 {
   font-size: 5rem;
-  color: lightgreen;
+  color: #FDDB3A;
   font-family: "Courier New", Courier, monospace;
   padding: 2rem 0rem;
 }
@@ -19,8 +19,20 @@ h2 {
 }
 
 header {
+  background-color: red;
   width: 100%;
   text-align: center;
+}
+.container {
+  background-color: aqua;
+}
+.date-container {
+  display: flex;
+  background-color: aquamarine;
+  padding: 0.5rem;
+}
+.habit-container {
+  background-color: burlywood;
 }
 
 .habit {
@@ -29,6 +41,7 @@ header {
   background-color: white;
   display: flex;
   justify-content: space-between;
+  width: 200px;
 }
 
 button {
@@ -54,4 +67,31 @@ li {
 .fa-plus,
 .fa-times {
   pointer-events: none;
+}
+
+.empty-div {
+  background-color: chartreuse;
+  padding: 0.5rem;
+  width: 200px;
+}
+
+.date-box {
+  background-color: coral;
+  border: solid red 2px;
+  width: 1.8rem;
+
+}
+
+.habit-row {
+  border: solid yellow 5px;
+  padding: 0.3rem;
+  display: flex;
+}
+
+.check-box {
+  background-color: coral;
+  border: solid blue 2px;
+  width: 1.8rem;
+
+
 }

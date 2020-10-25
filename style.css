@@ -7,6 +7,12 @@ body {
   background: #52575D;
 }
 
+header {
+  background-color: red;
+  width: 100%;
+  text-align: center;
+}
+
 h1 {
   font-size: 5rem;
   color: #FDDB3A;
@@ -16,21 +22,33 @@ h1 {
 
 h2 {
   font-size: 2rem;
-}
-
-header {
-  background-color: red;
   width: 100%;
   text-align: center;
 }
+
 .container {
   background-color: aqua;
 }
+
+/*date container */
 .date-container {
   display: flex;
   background-color: aquamarine;
   padding: 0.5rem;
 }
+.empty-div {
+  background-color: chartreuse;
+  padding: 0.5rem;
+  width: 200px;
+}
+
+.date-box {
+  background-color: coral;
+  border: solid red 1px;
+  width: 1.8rem;
+}
+
+/*habit container*/
 .habit-container {
   background-color: burlywood;
 }
@@ -69,29 +87,42 @@ li {
   pointer-events: none;
 }
 
-.empty-div {
-  background-color: chartreuse;
-  padding: 0.5rem;
-  width: 200px;
-}
-
-.date-box {
-  background-color: coral;
-  border: solid red 2px;
-  width: 1.8rem;
-
-}
-
 .habit-row {
   border: solid yellow 5px;
   padding: 0.3rem;
   display: flex;
 }
+.boxes{
+	display: flex;
+}
 
 .check-box {
-  background-color: coral;
-  border: solid blue 2px;
+  background-color: white;
+  border: solid blue 1px;
   width: 1.8rem;
-
-
+  display: flex;
+  justify-content: space-around;
+  padding:1.5rem 0.1rem;
 }
+
+.checked, .color-picker {
+	border-radius: 50%;
+	width:1rem;
+	height:1rem;
+	pointer-events: none;
+}
+
+.checked {
+	background:#E89CFB;
+}
+
+.planned{
+	border-radius: 50%;
+	width:1rem;
+	height:1rem;
+	background:none;
+	border: 3px solid #E89CFB;
+}
+
+
+

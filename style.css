@@ -89,9 +89,26 @@ li {
 }
 
 .check-box {
-  background-color: coral;
   border: solid blue 2px;
+  background-color: white;
   width: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
+}
+
+.planed {
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid rgb(131, 53, 233);
+  border-radius: 50%;
+}
+
+.checked {
+  width: 1rem;
+  height: 1rem;
+  background-color: rgb(131, 53, 233);
+  border-radius: 50%;
 }

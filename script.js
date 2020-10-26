@@ -78,6 +78,7 @@ function addHabit(event) {
 
   // clear input field
   habitInput.value = "";
+  checkedUnchecked();
 }
 
 //delete button
@@ -88,5 +89,24 @@ function deleteHabit(e) {
     habit.remove();
     
   }
+}
+
+// ----- plan - check - uncheck --- 
+
+function checkedUnchecked() {
+  const checkBoxes = document.querySelectorAll('.check-box');
+  checkBoxes.forEach(function(element) {
+    element.onclick = e => {
+    if (element.childNodes.length == 0) {
+      const checkMark = document.createElement('span');
+      checkMark.classList.add('planed');
+      element.appendChild(checkMark);
+    } else if (element.childNodes[0].classList.contains('planed')) {
+      element.childNodes[0].classList.remove('planed');
+      element.childNodes[0].classList.add('checked');
+    } else
+    element.childNodes[0].remove();
+
+  }})
 }
 

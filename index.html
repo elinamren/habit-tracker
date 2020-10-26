@@ -16,31 +16,38 @@
   <header>
     <h1>Habit tracker</h1>
   </header>
-  <h2>getMonth();</h2>
 
-  <div class="container">
+  <main class="container">
+    <h2>getMonth();</h2>
     <div class="header-container"></div>
 
     <div class="list-container">
       <ul class="habit-list">
       </ul>
     </div>
-  </div>
 
-  <form>
-    <input type="text" class="habit-input" list="habits"/>
-    <datalist id="habits">
-      <option value="Catch Pokémons"></option>
-      <option value="Dancing in the rain"></option>
-      <option value="Drink beer with FED22"></option>
-      <option value="Fix bugs"></option>
-      <option value="Eat chocolate"></option>
-      <option value="Time to reflect"></option>  
-    </datalist>
-    <button type="submit" class="habit-button">
-      <i class="fas fa-plus"></i>
-    </button>
-  </form>
+    <form>
+      <input type="text" class="habit-input" list="habits" placeholder="Add new habit"/>
+      <datalist id="habits">
+        <option value="Catch Pokémons"></option>
+        <option value="Dancing in the rain"></option>
+        <option value="Drink beer with FED22"></option>
+        <option value="Fix bugs"></option>
+        <option value="Eat chocolate"></option>
+        <option value="Time to reflect"></option>  
+      </datalist>
+      <button type="submit" class="habit-button">
+        <i class="fas fa-plus"></i>
+      </button>
+      <label>
+        <input type="color" class="color-picker" value="#f3c610">
+      </label>
+
+    </form>
+
+  </main>
+
+
 
   <script src="script.js"></script>
 </body>

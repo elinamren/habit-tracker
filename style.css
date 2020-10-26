@@ -29,10 +29,10 @@ header {
 }
 
 .habit {
-  padding: 1rem;
+  padding: 1rem 0rem;
   /* margin: 1rem; */
-  border: 1px solid pink;
-  background-color: white;
+  border: 1px solid rgb(255, 122, 145);
+  background-color: rgb(255, 209, 209);
   display: flex;
   /* justify-content: space-between; */
 }
@@ -102,6 +102,7 @@ li {
   width: 40px;
   padding: 0.5rem;
   border: 1px solid rgb(99, 99, 99);
+  background-color: white;
 }
 
 .habit-title {

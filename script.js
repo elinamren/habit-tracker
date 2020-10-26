@@ -4,7 +4,7 @@ const habitButton = document.querySelector(".habit-button");
 const habitList = document.querySelector(".habit-list");
 // ---- E L I N -----//
 const headerContainer = document.querySelector('.header-container');
-
+const colorPicker = document.querySelector('.color-picker');
 
 // Event listener
 habitButton.addEventListener("click", addHabit);
@@ -80,6 +80,7 @@ function addHabit(event) {
   habitList.appendChild(habitDiv);
   // clear input field
   habitInput.value = "";
+  changeColor();
 }
 
 //delete button
@@ -94,3 +95,16 @@ function deleteHabit(e) {
 
 
 
+function changeColor() {
+  const box = document.querySelectorAll(".habit-box");
+
+  box.forEach(function(element) {
+    element.onclick = e => {
+      if (element.style.backgroundColor === 'white') {
+        element.style.backgroundColor = colorPicker.value;
+      } else {
+        element.style.backgroundColor = 'white';
+      }
+    };
+  });
+}

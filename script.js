@@ -7,6 +7,7 @@ const habitContainer = document.querySelector(".habit-container");
 const monthText = document.querySelector('.month');
 
 // Event listener
+document.addEventListener('DOMContentLoaded', getHabits);
 habitButton.addEventListener("click", addHabit);
 habitList.addEventListener("click", deleteHabit);
 
@@ -70,6 +71,9 @@ function addHabit(event) {
   // append new habit inside habit div
   habitDiv.appendChild(newHabit);
 
+  //add habit to local storage
+  saveLocalHabits(habitInput.value);
+
   // create delete button ---------------------
   const deleteButton = document.createElement("button");
   //add delete icon to button
@@ -90,10 +94,11 @@ function addHabit(event) {
   } 
   habitList.appendChild(habitRow);
   habitContainer.appendChild(habitList);
+  
+  checkedUnchecked();
 
   // clear input field
   habitInput.value = "";
-  checkedUnchecked();
 }
 
 //delete button
@@ -101,6 +106,7 @@ function deleteHabit(e) {
   const item = e.target;
   if (item.classList[0] === "delete-button") {
     const habit = item.parentElement.parentElement;
+    removeLocalHabits(habit);
     habit.remove();
     
   }
@@ -124,5 +130,92 @@ function checkedUnchecked() {
     };
     };
   });
+}
+
+
+
+// ----- LOCAL STORAGE
+
+function saveLocalHabits(habit) {
+  // check do I have something in my local storage?
+  let habits;
+  if(localStorage.getItem('habits') === null){
+    habits = [];
+  } else {
+    habits = JSON.parse(localStorage.getItem('habits'));
+  }
+
+  habits.push(habit);
+  localStorage.setItem('habits', JSON.stringify(habits));
+}
+
+
+function getHabits() {
+    // check do I have something in my local storage?
+    let habits;
+    if(localStorage.getItem('habits') === null){
+      habits = [];
+    } else {
+      habits = JSON.parse(localStorage.getItem('habits'));
+    }
+    habits.forEach(function(habit){
+
+      // habit row div
+      const habitRow = document.createElement("div");
+      habitRow.classList.add("habit-row");
+
+      // create new div -----------------------
+      const habitDiv = document.createElement("div");
+      // add classlist
+      habitDiv.classList.add('habit');
+
+      // create new li ---------------------
+      const newHabit = document.createElement("li");
+      // show your input on new habit row
+      newHabit.innerText = habit;
+      // add classlist
+      newHabit.classList.add('habit-item')
+      // append new habit inside habit div
+      habitDiv.appendChild(newHabit);
+
+      // create delete button ---------------------
+      const deleteButton = document.createElement("button");
+      //add delete icon to button
+      deleteButton.innerHTML = '<i class="fas fa-times"></i>';
+      //add a class to delete button
+      deleteButton.classList.add("delete-button");
+      //append new delete button inside habit div
+      habitDiv.appendChild(deleteButton);
+
+      // append habit divs into habit list --------------------
+      habitRow.appendChild(habitDiv);
+      // adding dates (checkboxes) to new habit
+      for (let i = 0; i<days ;  i++)
+      {
+        const checkBoxes = document.createElement("div");
+        checkBoxes.classList.add("check-box");
+        habitRow.appendChild(checkBoxes);
+      } 
+      habitList.appendChild(habitRow);
+      habitContainer.appendChild(habitList);
+
+      checkedUnchecked();
+
+
+    })
+}
+
+// remove item from local storage
+function removeLocalHabits(habit){
+  let habits;
+  if(localStorage.getItem('habits') === null){
+    habits = [];
+  } else {
+    habits = JSON.parse(localStorage.getItem('habits'));
+  }
+  const habitIndex = habit.children[0].children[0].innerText;
+  habits.splice(habits.indexOf(habitIndex), 1);
+  localStorage.setItem('habits', JSON.stringify(habits));
+ 
 }
 

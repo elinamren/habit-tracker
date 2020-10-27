@@ -4,6 +4,7 @@ const habitButton = document.querySelector(".habit-button");
 const habitList = document.querySelector(".habit-list");
 const dateContainer = document.querySelector(".date-container");
 const habitContainer = document.querySelector(".habit-container");
+const monthText = document.querySelector('.month');
 
 // Event listener
 habitButton.addEventListener("click", addHabit);
@@ -12,14 +13,28 @@ habitList.addEventListener("click", deleteHabit);
 
 // functions
 
+// get the current month and put text in h2
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+let date = new Date();
+let n = months[date.getMonth()];
+monthText.innerText = n;
+
+
+//Get days in current month
+function daysInThisMonth() {
+  return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+}
+let days = daysInThisMonth();
+
+
 //draw date container
 function drawDate (){
   const emptyDiv = document.createElement("div");
   emptyDiv.classList.add("empty-div");
   dateContainer.appendChild(emptyDiv);
 
-  //days in the month small div with numbers
-  for (let i = 0; i<=30 ;  i++)
+  //drawing all teh days in current month in date container
+  for (let i = 0; i<days;  i++)
   {
     const dates = document.createElement("div");
     dates.classList.add("date-box");
@@ -67,7 +82,7 @@ function addHabit(event) {
   // append habit divs into habit list --------------------
   habitRow.appendChild(habitDiv);
   // adding dates (checkboxes) to new habit
-  for (let i = 0; i<=30 ;  i++)
+  for (let i = 0; i<days ;  i++)
   {
     const checkBoxes = document.createElement("div");
     checkBoxes.classList.add("check-box");
@@ -99,14 +114,15 @@ function checkedUnchecked() {
     element.onclick = e => {
     if (element.childNodes.length == 0) {
       const checkMark = document.createElement('span');
-      checkMark.classList.add('planed');
+      checkMark.classList.add('planned');
       element.appendChild(checkMark);
-    } else if (element.childNodes[0].classList.contains('planed')) {
-      element.childNodes[0].classList.remove('planed');
+    } else if (element.childNodes[0].classList.contains('planned')) {
+      element.childNodes[0].classList.remove('planned');
       element.childNodes[0].classList.add('checked');
-    } else
+    } else {
     element.childNodes[0].remove();
-
-  }})
+    };
+    };
+  });
 }
 

@@ -1,3 +1,7 @@
+@font-face {
+  font-family: lemonfont;
+  src: url(Lemon-Tuesday.otf);
+}
 * {
   padding: 0;
   margin: 0;
@@ -5,12 +9,19 @@
 }
 body {
   background: #52575D;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  
+
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 7rem;
   color: #FDDB3A;
-  font-family: "Courier New", Courier, monospace;
+  font-family: lemonfont;
+  
+
+
   padding: 2rem 0rem;
 }
 
@@ -21,30 +32,30 @@ h2 {
 }
 
 header {
-  background-color: red;
   width: 100%;
   text-align: center;
 }
 .container {
-  background-color: aqua;
 }
 .date-container {
   display: flex;
-  background-color: aquamarine;
+  justify-content: center;
+  
 }
 
 .empty-div {
-  background-color: chartreuse;
+  
   padding: 0.5rem;
-  margin: 0.5rem;
-  width: 250px;
+  margin-right: 0.2rem;
+  width: 13rem;
 }
 
 .date-box {
-  width: 1.8rem;
+  width: 2.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 
@@ -55,16 +66,24 @@ header {
 
 
 .habit-container {
-  background-color: burlywood;
+
+  display: flex;
+  justify-content: center;
 }
 
 .habit {
   padding: 0.5rem;
-  margin: 0.5rem;
+  margin-top: 0.2rem;
+  margin-right: 0.2rem;
   background-color: white;
   display: flex;
   justify-content: space-between;
-  width: 250px;
+  width: 13rem;
+  height: 2.2rem;
+  border: dotted gray 0.5px;
+  align-items: center;
+  
+
 }
 
 li {
@@ -76,12 +95,15 @@ li {
 }
 
 .check-box {
-  border: solid blue 2px;
+  border: dotted gray 0.5px;
   background-color: white;
-  width: 1.8rem;
+  width: 2.2rem;
+  height: 2.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 0.2rem;
+
 }
 
 .planned {

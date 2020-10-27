@@ -4,15 +4,20 @@ const habitButton = document.querySelector(".habit-button");
 const habitList = document.querySelector(".habit-list");
 const dateContainer = document.querySelector(".date-container");
 const habitContainer = document.querySelector(".habit-container");
-let colors = ['#E89CFB', '#9ED35B', '#FFE178', '#FFBB36', '#FFA7F1'], 
-index = 0;
+let colors = ['#E89CFB', '#9ED35B', '#FFE178', '#FFBB36', '#FFA7F1'], index = 0;
+let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 // Event listener
 habitButton.addEventListener("click", addHabit);
 habitList.addEventListener("click", deleteHabit);
-// habitList.addEventListener("click", checkHabit);
+
 
 // functions
+//get the current month
+let d = new Date();
+let n = months[d.getMonth()];
+let currentMonth = document.querySelector('.month');
+currentMonth.innerText = n;
 
 //draw date
 function drawDate (){
@@ -31,9 +36,6 @@ function drawDate (){
 //calling the drawDate function
 drawDate ();
 
-// for (let c=0; c < colors.length; c++){
-// 	let color = colors[c]; 
-
 // add habits 
 function addHabit(event) {
 	event.preventDefault();
@@ -45,9 +47,6 @@ function addHabit(event) {
   // create new div -----------------------
   const habitDiv = document.createElement("div");
   habitDiv.classList.add('habit');
-
-  const boxes = document.createElement("div");
-  boxes.classList.add('boxes');
 
   // add color span
   let colorPicker = document.createElement("span");
@@ -86,9 +85,8 @@ function addHabit(event) {
   for (let i = 0; i<=30 ;  i++) {
   	const checkBox = document.createElement("div");
   	checkBox.classList.add("check-box");
-  	boxes.appendChild(checkBox);
+  	habitRow.appendChild(checkBox);
   }
-  habitRow.appendChild(boxes);
   habitList.appendChild(habitRow);
   habitContainer.appendChild(habitList);
 
@@ -118,38 +116,37 @@ function checkBox() {
       	const checkmark = document.createElement('span');
 		checkmark.classList.add ('planned');
 		element.appendChild(checkmark);
-		// spans1.push(checkmark);
-		// const planned = querySelectorAll('.planned');
-		// planned.style.background = 'blue';
       } else if (element.childNodes[0].classList.contains("planned")) {
         element.childNodes[0].classList.remove ('planned');
 		element.childNodes[0].classList.add ('checked');
-
       } else {
       	element.childNodes[0].remove();
-      	checkmark = document.querySelector('.checked');
-      	// spans1.pop(checkmark);
       }
-      // countPlanned ()
+      countPlanned ();
     };
   });
 };
-// console.log (spans);
-// function countPlanned () {
-// 	const boxes = document.querySelector(".boxes");
-// 	const boxesChildNodes = boxes.childNodes;
-// 		console.log(boxesChildNodes);
-// 	const checkboxChildNodes = boxesChildNodes.childNodes;
-// 		console.log(checkboxChildNodes);
-// 	};
+
+let spans = [];
+function countPlanned () {
+	const boxes = document.querySelectorAll(".check-box");
+	let element = boxes.childNodes[0];
+	boxes.forEach(function(element) {
+		if(element.childNodes[0].classList.contains("planned")) {
+			spans.push(element.childNodes[0].classList.contains("planned"))
+		} else {
+			checked.push(element.childNodes[0].classList.contains("checked"));
+	};
+	console.log(spans);
+	console.log(checked);
+});
+}
+
+
 	// const nodesSameClass = box.getElementsByClassName("planned");
 	// console.log(nodesSameClass.length);
 
 	// const grandParent = document.querySelector('boxes');
 	// const box = document.querySelectorAll(".check-box");
-	// box.forEach(function(){
-	// const spans = box.getElementsByTagName("span");
-	// console.log(spans);
-
-
+	// box
 

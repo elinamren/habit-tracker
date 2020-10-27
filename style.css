@@ -101,8 +101,8 @@ li {
   border: solid blue 1px;
   width: 1.8rem;
   display: flex;
-  justify-content: space-around;
-  padding:1.5rem 0.1rem;
+  justify-content: center;
+  align-items: center
 }
 
 .checked, .color-picker {

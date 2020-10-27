@@ -2,6 +2,11 @@
   font-family: lemonfont;
   src: url(Lemon-Tuesday.otf);
 }
+
+@font-face {
+  font-family: Luam;
+  src: url(Luam-Light.otf);
+}
 * {
   padding: 0;
   margin: 0;
@@ -9,9 +14,7 @@
 }
 body {
   background: #52575D;
-  font-family: Helvetica, sans-serif;
-  font-weight: 400;
-  
+  font-family: Luam, sans-serif;  
 
 }
 
@@ -29,6 +32,7 @@ h2 {
   font-size: 2rem;
   text-align: center;
   padding: 1rem;
+  color:white;
 }
 
 header {
@@ -55,6 +59,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  color:white;
 
 }
 

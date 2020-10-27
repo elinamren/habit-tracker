@@ -16,6 +16,8 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 header {
@@ -29,62 +31,47 @@ header {
 .date-container {
   display: flex;
   background-color: aquamarine;
-  padding: 0.5rem;
 }
+
+.empty-div {
+  background-color: chartreuse;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 250px;
+}
+
+.date-box {
+  width: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
 .habit-container {
   background-color: burlywood;
 }
 
 .habit {
-  padding: 1rem;
-  margin: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
   background-color: white;
   display: flex;
   justify-content: space-between;
-  width: 200px;
-}
-
-button {
-  border: none;
-  background-color: white;
-}
-
-.habit-button {
-  padding: 1rem;
+  width: 250px;
 }
 
 li {
   list-style: none;
 }
 
-.habit-input {
-  padding: 1rem;
-  margin: 1rem;
-  border: none;
-  outline: none;
-}
-
-.fa-plus,
-.fa-times {
-  pointer-events: none;
-}
-
-.empty-div {
-  background-color: chartreuse;
-  padding: 0.5rem;
-  width: 200px;
-}
-
-.date-box {
-  background-color: coral;
-  border: solid red 2px;
-  width: 1.8rem;
-
-}
-
 .habit-row {
-  border: solid yellow 5px;
-  padding: 0.3rem;
   display: flex;
 }
 
@@ -95,11 +82,9 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
 
-.planed {
+.planned {
   width: 1rem;
   height: 1rem;
   border: 3px solid rgb(131, 53, 233);
@@ -111,4 +96,32 @@ li {
   height: 1rem;
   background-color: rgb(131, 53, 233);
   border-radius: 50%;
+}
+
+
+
+
+button {
+  border: none;
+  background-color: white;
+}
+
+.habit-button {
+  padding: 1rem;
+}
+
+.fa-plus,
+.fa-times {
+  pointer-events: none;
+}
+
+.habit-input {
+  padding: 1rem;
+  margin: 1rem;
+  border: none;
+  outline: none;
+}
+
+.info {
+  display: inline-block;
 }

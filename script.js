@@ -5,6 +5,7 @@ const habitList = document.querySelector(".habit-list");
 const dateContainer = document.querySelector(".date-container");
 const habitContainer = document.querySelector(".habit-container");
 const monthText = document.querySelector('.month');
+const container = document.querySelector('.container')
 
 // Event listener
 document.addEventListener('DOMContentLoaded', getHabits);
@@ -101,6 +102,17 @@ function addHabit(event) {
   habitInput.value = "";
 }
 
+// create color picker
+	const colorDiv = document.createElement("div");
+	colorDiv.classList.add('color-div');
+	colorDiv.innerText = "Dot color";
+  const colorPicker = document.createElement("input");
+  colorPicker.type = "color";
+  colorPicker.value = "#D296F6"
+  colorPicker.classList.add('color-picker');
+  colorDiv.appendChild(colorPicker);
+  container.appendChild(colorDiv);
+
 //delete button
 function deleteHabit(e) {
   const item = e.target;
@@ -122,9 +134,13 @@ function checkedUnchecked() {
       const checkMark = document.createElement('span');
       checkMark.classList.add('planned');
       element.appendChild(checkMark);
+      element.childNodes[0].style.border = "solid";
+      element.childNodes[0].style.borderColor = colorPicker.value;
     } else if (element.childNodes[0].classList.contains('planned')) {
+    	let checkMark = document.querySelector('span');
       element.childNodes[0].classList.remove('planned');
       element.childNodes[0].classList.add('checked');
+      element.childNodes[0].style.background = colorPicker.value;
     } else {
     element.childNodes[0].remove();
     };

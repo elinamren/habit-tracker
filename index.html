@@ -17,34 +17,37 @@
     <h1>Habit Tracker</h1>
   </header>
   <main class="container">
-  
+
     <h2 class="month"></h2>
-  
+
     <div class="date-container"> </div>
 
-      <div class="habit-container">
-        <ul class="habit-list">
-        </ul>
-      </div>
-      <form>
-        <input type="text" class="habit-input" list="habit-suggestions"  placeholder="Enter Habit"/>
-        <datalist id="habit-suggestions">
-          <option value="Catch Pokémons"></option>
-          <option value="Drink beer with FED22"></option>
-          <option value="Reflection Time"></option>
-          <option value="Call your MAMA"></option>
-          <option value="Debugging"></option>
-        </datalist>
-        <button type="submit" class="habit-button">
-          <i class="fas fa-plus"></i>
-        </button>
-      </form>
+    <div class="habit-container">
+      <ul class="habit-list">
+      </ul>
+    </div>
 
-      <div class="info planned"></div>
+    <div class="info-div">
+      <div class="info planned-symbol"></div>
       <p>Planned</p>
-      <div class="info checked"></div>
+      <div class="info checked-symbol"></div>
       <p>Done </p>
-      
+    </div>
+    
+    <form>
+      <input type="text" class="habit-input" list="habit-suggestions"  placeholder="Enter Habit"/>
+      <datalist id="habit-suggestions">
+        <option value="Catch Pokémons"></option>
+        <option value="Drink beer with FED22"></option>
+        <option value="Reflection Time"></option>
+        <option value="Call your MAMA"></option>
+        <option value="Debugging"></option>
+      </datalist>
+      <button type="submit" class="habit-button">
+        <i class="fas fa-plus"></i>
+      </button>
+    </form>
+
     
   </main>
 

@@ -22,13 +22,11 @@ h1 {
   font-size: 7rem;
   color: #FDDB3A;
   font-family: lemonfont;
-  
-
-
   padding: 2rem 0rem;
 }
 
 h2 {
+	font-family: lemonfont;
   font-size: 2rem;
   text-align: center;
   padding: 1rem;
@@ -48,7 +46,6 @@ header {
 }
 
 .empty-div {
-  
   padding: 0.5rem;
   margin-right: 0.2rem;
   width: 13rem;
@@ -60,13 +57,7 @@ header {
   justify-content: center;
   align-items: center;
   color:white;
-
 }
-
-
-
-
-
 
 
 
@@ -78,15 +69,14 @@ header {
 
 .habit {
   padding: 0.5rem;
-  margin-top: 0.2rem;
-  margin-right: 0.2rem;
   background-color: white;
   display: flex;
   justify-content: space-between;
   width: 13rem;
-  height: 2.2rem;
-  border: dotted gray 0.5px;
+/*  height: 2.2rem;*/
+  border: solid gray 0.1px;
   align-items: center;
+  margin-right:0.4rem;
   
 
 }
@@ -100,33 +90,46 @@ li {
 }
 
 .check-box {
-  border: dotted gray 0.5px;
+  border: solid gray 0.1px;
   background-color: white;
   width: 2.2rem;
-  height: 2.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0.2rem;
 
 }
+.info-div {
+	display: flex;
+	float:right;
+	margin:0.5rem 5rem;
+	color:white;
+}
 
-.planned {
+.planned, .planned-symbol, .checked, .checked-symbol {
   width: 1rem;
   height: 1rem;
-  border: 3px solid rgb(131, 53, 233);
   border-radius: 50%;
 }
 
-.checked {
-  width: 1rem;
-  height: 1rem;
-  background-color: rgb(131, 53, 233);
-  border-radius: 50%;
+.planned-symbol{
+	border: solid 3px #D296F6;
+	margin:0 0.3rem;
 }
 
+.checked-symbol{
+	background: #D296F6;
+	margin:0 0.3rem;
+}
 
+.info {
+  display: inline-block;
+}
 
+form{
+	position: relative;
+	left:3.1rem;
+
+}
 
 button {
   border: none;
@@ -135,6 +138,7 @@ button {
 
 .habit-button {
   padding: 1rem;
+  border: solid gray 0.2px;
 }
 
 .fa-plus,
@@ -147,8 +151,28 @@ button {
   margin: 1rem;
   border: none;
   outline: none;
+  border: solid gray 0.2px;
 }
 
-.info {
-  display: inline-block;
+
+
+.color-div{
+	position: relative;
+	width:4.5rem;
+	padding:0.2rem 0.4rem;
+	border-radius: 50px;
+	border: solid 1px white;
+	text-align: center;
+	color:white;
+	left:20rem;
+	bottom:4rem;
+}
+
+.color-div input{
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	opacity: 0;
+	cursor: pointer;
 }

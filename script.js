@@ -14,17 +14,17 @@ habitList.addEventListener("click", deleteHabit);
 
 //draw date container
 function drawDate (){
-  const emptyDiv = document.createElement("div");
-  emptyDiv.classList.add("empty-div");
-  dateContainer.appendChild(emptyDiv);
+	const emptyDiv = document.createElement("div");
+	emptyDiv.classList.add("empty-div");
+	dateContainer.appendChild(emptyDiv);
 
   //days in the month small div with numbers
   for (let i = 0; i<=30 ;  i++)
   {
-    const dates = document.createElement("div");
-    dates.classList.add("date-box");
-    dates.innerText = i+1;
-    dateContainer.appendChild(dates);
+  	const dates = document.createElement("div");
+  	dates.classList.add("date-box");
+  	dates.innerText = i+1;
+  	dateContainer.appendChild(dates);
   } 
 
 }
@@ -36,7 +36,7 @@ drawDate ();
 
 
 function addHabit(event) {
-  event.preventDefault();
+	event.preventDefault();
   // habit row div
   const habitRow = document.createElement("div");
   habitRow.classList.add("habit-row");
@@ -45,6 +45,12 @@ function addHabit(event) {
   const habitDiv = document.createElement("div");
   // add classlist
   habitDiv.classList.add('habit');
+
+  // create color picker
+  const colorPicker = document.createElement("input");
+  colorPicker.type = "color";
+  colorPicker.classList.add('color-picker');
+  habitDiv.appendChild(colorPicker);
 
   // create new li ---------------------
   const newHabit = document.createElement("li");
@@ -63,15 +69,15 @@ function addHabit(event) {
   deleteButton.classList.add("delete-button");
   //append new delete button inside habit div
   habitDiv.appendChild(deleteButton);
- 
+
   // append habit divs into habit list --------------------
   habitRow.appendChild(habitDiv);
   // adding dates (checkboxes) to new habit
   for (let i = 0; i<=30 ;  i++)
   {
-    const checkBoxes = document.createElement("div");
-    checkBoxes.classList.add("check-box");
-    habitRow.appendChild(checkBoxes);
+  	const checkBoxes = document.createElement("div");
+  	checkBoxes.classList.add("check-box");
+  	habitRow.appendChild(checkBoxes);
   } 
   habitList.appendChild(habitRow);
   habitContainer.appendChild(habitList);
@@ -83,30 +89,36 @@ function addHabit(event) {
 
 //delete button
 function deleteHabit(e) {
-  const item = e.target;
-  if (item.classList[0] === "delete-button") {
-    const habit = item.parentElement.parentElement;
-    habit.remove();
-    
-  }
-}
+	const item = e.target;
+	if (item.classList[0] === "delete-button") {
+		const habit = item.parentElement.parentElement;
+		habit.remove();
+	};
+};
 
 // ----- plan - check - uncheck --- 
-
 function checkedUnchecked() {
-  const checkBoxes = document.querySelectorAll('.check-box');
-  checkBoxes.forEach(function(element) {
-    element.onclick = e => {
-    if (element.childNodes.length == 0) {
-      const checkMark = document.createElement('span');
-      checkMark.classList.add('planed');
-      element.appendChild(checkMark);
-    } else if (element.childNodes[0].classList.contains('planed')) {
-      element.childNodes[0].classList.remove('planed');
-      element.childNodes[0].classList.add('checked');
-    } else
-    element.childNodes[0].remove();
+	const checkBoxes = document.querySelectorAll('.check-box');
+	let colorPicker = document.querySelector('.color-picker');
+	let checkMark;
 
-  }})
-}
+	checkBoxes.forEach(function(element) {
+		element.onclick = e => {
+			if (element.childNodes.length == 0) {
+				checkMark = document.createElement('span');
+				checkMark.classList.add('planed');
+				element.appendChild(checkMark);
+				checkMark.style.borderWidth = "thick";
+				checkMark.style.border = "red";
+
+			} else if (element.childNodes[0].classList.contains('planed')) {
+				element.childNodes[0].classList.remove('planed');
+				element.childNodes[0].classList.add('checked');
+				checkMark.style.background = colorPicker.value;
+			} else {
+				element.childNodes[0].remove();
+			};
+		};
+	});
+};
 

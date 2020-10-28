@@ -5,6 +5,9 @@ const habitList = document.querySelector(".habit-list");
 const dateContainer = document.querySelector(".date-container");
 const habitContainer = document.querySelector(".habit-container");
 const monthText = document.querySelector('.month');
+const mainContainer = document.querySelector('.container');
+const form = document.querySelector('.form');
+
 
 // Event listener
 document.addEventListener('DOMContentLoaded', getHabits);
@@ -100,6 +103,22 @@ function addHabit(event) {
   // clear input field
   habitInput.value = "";
 }
+
+// color picker 
+const colordiv = document.createElement("div");
+colordiv.classList.add("color-div");
+colordiv.innerText = "Color Picker";
+
+const colorinput = document.createElement("input");
+colorinput.classList.add("color-picker");
+colorinput.type = "color";
+colorinput.value = "#ffee23"
+
+colordiv.appendChild(colorinput);
+form.appendChild(colordiv);
+
+
+
 
 //delete button
 function deleteHabit(e) {

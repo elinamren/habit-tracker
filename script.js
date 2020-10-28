@@ -112,7 +112,7 @@ colordiv.innerText = "Color Picker";
 const colorinput = document.createElement("input");
 colorinput.classList.add("color-picker");
 colorinput.type = "color";
-colorinput.value = "#ffee23"
+colorinput.value = "#FDDB3A"
 
 colordiv.appendChild(colorinput);
 form.appendChild(colordiv);

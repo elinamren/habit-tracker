@@ -126,10 +126,12 @@ li {
 button {
   border: none;
   background-color: white;
+  margin: 1rem 0;
 }
 
 .habit-button {
-  padding: 1rem;
+  padding: 0.7rem;
+  height: 2.2rem;
 }
 
 .fa-plus,
@@ -139,11 +141,22 @@ button {
 
 .habit-input {
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem 0.2rem  ;
   border: none;
   outline: none;
+  height: 2.2rem;
 }
 
 .info {
   display: inline-block;
+}
+
+.color-div {
+  height: 2.2rem;
+  margin: 1.3rem;
+}
+
+.form {
+  display: flex;
+  vertical-align: middle;
 }

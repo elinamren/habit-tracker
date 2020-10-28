@@ -106,7 +106,7 @@ function addHabit(event) {
 	const colorDiv = document.createElement("div");
 	colorDiv.classList.add('color-div');
 	colorDiv.innerText = "Dot color";
-  const colorPicker = document.createElement("input");
+  	const colorPicker = document.createElement("input");
   colorPicker.type = "color";
   colorPicker.value = "#D296F6"
   colorPicker.classList.add('color-picker');

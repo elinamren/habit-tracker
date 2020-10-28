@@ -39,8 +39,7 @@ header {
   width: 100%;
   text-align: center;
 }
-.container {
-}
+
 .date-container {
   display: flex;
   justify-content: center;
@@ -71,7 +70,7 @@ header {
 
 .habit {
   padding: 0.5rem;
-  margin-top: 0.2rem;
+  /* margin-top: 0.2rem; */
   margin-right: 0.2rem;
   background-color: lightgrey;
   display: flex;
@@ -98,7 +97,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0.2rem;
+  /* margin-top: 0.2rem; */
 
 }
 
@@ -154,16 +153,18 @@ button {
 	border: solid 1px white;
 	text-align: center;
   color:white;
-  /* position: relative; */
+  position: relative;
 	/* left:20rem;
 	bottom:4rem; */
 }
 
-.color-div input{
+.color-picker{
   width:100%;
   height:100%;
-  /* opacity: 0; */
-  position: relative;
+  opacity: 0;
+  position: absolute;
+  top:0;
+  left:0;
   cursor: pointer;
 }
 
@@ -187,7 +188,7 @@ button {
 .planned {
   width: 1rem;
   height: 1rem;
-  border: 3px solid #DB6400;
+  border: 3px solid #FDDB3A;
   border-radius: 50%;
 
 }
@@ -195,6 +196,6 @@ button {
 .checked {
   width: 1rem;
   height: 1rem;
-  background-color:#DB6400;
+  background-color:#FDDB3A;
   border-radius: 50%;
 }

@@ -7,13 +7,14 @@ const habitContainer = document.querySelector(".habit-container");
 const monthText = document.querySelector('.month');
 const mainContainer = document.querySelector('.container');
 const form = document.querySelector('.form');
+const colorinput = document.createElement("input");
 
 
 // Event listener
 document.addEventListener('DOMContentLoaded', getHabits);
 habitButton.addEventListener("click", addHabit);
 habitList.addEventListener("click", deleteHabit);
-
+colorinput.addEventListener("input", updateValue);
 
 // functions
 
@@ -108,15 +109,20 @@ function addHabit(event) {
 const colordiv = document.createElement("div");
 colordiv.classList.add("color-div");
 colordiv.innerText = "Color Picker";
+colordiv.style.background = "#DB6400";
 
-const colorinput = document.createElement("input");
+
 colorinput.classList.add("color-picker");
 colorinput.type = "color";
-colorinput.value = "#FDDB3A"
+colorinput.value = "#DB6400";
+
 
 colordiv.appendChild(colorinput);
 form.appendChild(colordiv);
 
+function updateValue(e){
+  colordiv.style.background = e.target.value;
+};
 
 
 

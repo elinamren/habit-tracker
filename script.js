@@ -5,7 +5,8 @@ const habitList = document.querySelector(".habit-list");
 const dateContainer = document.querySelector(".date-container");
 const habitContainer = document.querySelector(".habit-container");
 const monthText = document.querySelector('.month');
-const container = document.querySelector('.container')
+const container = document.querySelector('.container');
+let rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30], index = 0;
 
 // Event listener
 document.addEventListener('DOMContentLoaded', getHabits);
@@ -49,15 +50,12 @@ function drawDate (){
 drawDate ();
 
 // adding habits
-
-
-
 function addHabit(event) {
   event.preventDefault();
   // habit row div
   const habitRow = document.createElement("div");
   habitRow.classList.add("habit-row");
-  
+
   // create new div -----------------------
   const habitDiv = document.createElement("div");
   // add classlist
@@ -86,13 +84,22 @@ function addHabit(event) {
  
   // append habit divs into habit list --------------------
   habitRow.appendChild(habitDiv);
+
+  // add box-container
+  const boxes = document.createElement("div");
+  boxes.classList.add("boxes");
+  boxes.id = rows[index];
+  index = (index + 1) % rows.length;
+  
+
   // adding dates (checkboxes) to new habit
   for (let i = 0; i<days ;  i++)
   {
     const checkBoxes = document.createElement("div");
     checkBoxes.classList.add("check-box");
-    habitRow.appendChild(checkBoxes);
+    boxes.appendChild(checkBoxes);
   } 
+  habitRow.appendChild(boxes);
   habitList.appendChild(habitRow);
   habitContainer.appendChild(habitList);
   
@@ -144,9 +151,25 @@ function checkedUnchecked() {
     } else {
     element.childNodes[0].remove();
     };
+    countPlanned ()
     };
   });
 }
+function countPlanned () {
+	let countRow[index] = document.getElementById([index]);
+	let boxesChildNodes[index] = countRow.childNodes;
+		console.log(boxesChildNodes);
+	};
+	// const nodesSameClass = box.getElementsByClassName("planned");
+	// console.log(nodesSameClass.length);
+
+	// const grandParent = document.querySelector('boxes');
+	// const box = document.querySelectorAll(".check-box");
+	// box.forEach(function(){
+	// const spans = box.getElementsByTagName("span");
+	// console.log(spans);
+
+
 
 
 

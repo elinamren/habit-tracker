@@ -13,7 +13,6 @@
   box-sizing: border-box;
 }
 body {
-  background: #52575D;
   font-family: Luam, sans-serif;  
 
 }
@@ -30,7 +29,7 @@ h2 {
   font-size: 2rem;
   text-align: center;
   padding: 1rem;
-  color:white;
+
 }
 
 header {
@@ -56,7 +55,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  color:white;
+
 }
 
 
@@ -74,28 +73,28 @@ header {
   justify-content: space-between;
   width: 13rem;
 /*  height: 2.2rem;*/
-  border: solid gray 0.1px;
+  border: solid gray 0.3px;
   align-items: center;
   margin-right:0.4rem;
-  
-
+  border-radius: 50px;
 }
 
 li {
   list-style: none;
 }
 
-.habit-row {
+.habit-row, .boxes {
   display: flex;
 }
 
 .check-box {
-  border: solid gray 0.1px;
+  border: solid gray 0.3px;
   background-color: white;
   width: 2.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 20%;
 
 }
 .info-div {

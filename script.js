@@ -132,7 +132,6 @@ function deleteHabit(e) {
 }
 
 // ----- plan - check - uncheck --- 
-
 function checkedUnchecked() {
   const checkBoxes = document.querySelectorAll('.check-box');
   checkBoxes.forEach(function(element) {
@@ -141,9 +140,12 @@ function checkedUnchecked() {
       const checkMark = document.createElement('span');
       checkMark.classList.add('planned');
       element.appendChild(checkMark);
+      element.childNodes[0].style.border = "solid";
+      element.childNodes[0].style.borderColor = colorinput.value;
     } else if (element.childNodes[0].classList.contains('planned')) {
       element.childNodes[0].classList.remove('planned');
       element.childNodes[0].classList.add('checked');
+      element.childNodes[0].style.background = colorinput.value;
     } else {
     element.childNodes[0].remove();
     };
@@ -154,7 +156,6 @@ function checkedUnchecked() {
 
 
 // ----- LOCAL STORAGE
-
 function saveLocalHabits(habit) {
   // check do I have something in my local storage?
   let habits;

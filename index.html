@@ -17,15 +17,16 @@
     <h1>Habit Tracker</h1>
   </header>
   <main class="container">
-  
+    
     <h2 class="month"></h2>
-  
+    
     <div class="date-container"> </div>
-
-      <div class="habit-container">
-        <ul class="habit-list">
-        </ul>
-      </div>
+    
+    <div class="habit-container">
+      <ul class="habit-list">
+      </ul>
+    </div>
+    <div class="bottom-row">
       <form class="form">
         <input type="text" class="habit-input" list="habit-suggestions"  placeholder="Enter Habit"/>
         <datalist id="habit-suggestions">
@@ -38,18 +39,20 @@
         <button type="submit" class="habit-button">
           <i class="fas fa-plus"></i>
         </button>
-
-
       </form>
 
-      <div class="info planned"></div>
-      <p>Planned</p>
-      <div class="info checked"></div>
-      <p>Done </p>
+      <div class="info">
+        <span class="planned"></span>
+        <p>Planned</p>
+        <span class="checked"></span>
+        <p>Done</p>
+      </div>
       
+      
+    </div>
     
   </main>
-
+  
   <script src="script.js"></script>
 </body>
 </html>
